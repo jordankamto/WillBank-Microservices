@@ -21,28 +21,13 @@ public class GatewayRoutesConfig {
         return builder.routes()
                 .route("customer-service", r -> r
                 .path("/api/customers/**")
-                .filters(f -> f.circuitBreaker(c -> c
-                .setName("customerCB")
-                .setFallbackUri("forward:/fallback/customer")))
-                .uri("lb://CUSTOMER-SERVICE"))
+                .uri("lb://CUSTOMER-SERVICE-WILLBANK"))
                 .route("account-service", r -> r
                 .path("/api/accounts/**")
-                .filters(f -> f.circuitBreaker(c -> c
-                .setName("accountCB")
-                .setFallbackUri("forward:/fallback/account")))
-                .uri("lb://ACCOUNT-SERVICE"))
+                .uri("lb://ACCOUNT-SERVICE-WILLBANK"))
                 .route("transaction-service", r -> r
                 .path("/api/transactions/**")
-                .filters(f -> f.circuitBreaker(c -> c
-                .setName("transactionCB")
-                .setFallbackUri("forward:/fallback/transaction")))
-                .uri("lb://TRANSACTION-SERVICE"))
-                .route("notification-service", r -> r
-                .path("/api/notifications/**")
-                .uri("lb://NOTIFICATION-SERVICE"))
-                .route("composite-service", r -> r
-                .path("/api/dashboard/**")
-                .uri("lb://COMPOSITE-SERVICE"))
+                .uri("lb://TRANSACTION-SERVICE-WILLBANK"))
                 .build();
     }
 }
