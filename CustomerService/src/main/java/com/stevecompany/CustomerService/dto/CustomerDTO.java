@@ -9,7 +9,6 @@ package com.stevecompany.CustomerService.dto;
  * @author steve
  */
 import com.stevecompany.CustomerService.entity.Customer;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -38,7 +37,7 @@ public class CustomerDTO {
         return dto;
     }
 
-    // Getters
+    // GETTERS
     public UUID getId() { return id; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
@@ -49,7 +48,7 @@ public class CustomerDTO {
     public LocalDateTime getCreatedAt() { return createdAt; }
     public LocalDateTime getUpdatedAt() { return updatedAt; }
 
-    // Setters
+    // SETTERS
     public void setId(UUID id) { this.id = id; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }

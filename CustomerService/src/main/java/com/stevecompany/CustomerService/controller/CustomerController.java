@@ -9,6 +9,7 @@ package com.stevecompany.CustomerService.controller;
  * @author steve
  */
 import com.stevecompany.CustomerService.dto.CustomerDTO;
+import com.stevecompany.CustomerService.dto.CustomerExistsResponse;
 import com.stevecompany.CustomerService.entity.Customer;
 import com.stevecompany.CustomerService.service.CustomerService;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<CustomerDTO> create(@RequestBody Customer customer) {
-        log.info("Received POST /api/customers - firstName: {}, email: {}", 
+        log.info("Received POST /api/customers - firstName: {}, email: {}",
                 customer.getFirstName(), customer.getEmail());
         try {
             Customer created = service.create(customer);
@@ -54,13 +55,25 @@ public class CustomerController {
         return ResponseEntity.ok(CustomerDTO.fromEntity(customer));
     }
 
+    @GetMapping("/{id}/exists")
+    public ResponseEntity<CustomerExistsResponse> checkCustomerExists(@PathVariable UUID id) {
+        log.info("Checking if customer exists: {}", id);
+        Customer customer = service.findById(id);
+        if (customer != null) {
+            return ResponseEntity.ok(CustomerExistsResponse.found(customer));
+        }
+        return ResponseEntity.ok(CustomerExistsResponse.notFound());
+    }
+
     @GetMapping
-    public ResponseEntity<?> search(@RequestParam(required = false) String email,
-                                     @RequestParam(required = false) String phone) {
+    public ResponseEntity<?> search(
+            @RequestParam(required = false) String email,
+            @RequestParam(required = false) String phone) {
+
         log.info("Received GET /api/customers - email: {}, phone: {}", email, phone);
-        
-        // Si aucun paramètre, retourner tous les clients
-        if (email == null && phone == null) {
+
+        if ((email == null || email.trim().isEmpty())
+                && (phone == null || phone.trim().isEmpty())) {
             List<CustomerDTO> customers = service.findAll().stream()
                     .map(CustomerDTO::fromEntity)
                     .collect(Collectors.toList());
@@ -68,16 +81,22 @@ public class CustomerController {
             return ResponseEntity.ok(customers);
         }
         
-        if (email != null) {
-            return service.findByEmail(email)
+        if (email != null && !email.trim().isEmpty()) {
+            return service.findByEmail(email.trim())
                     .map(c -> ResponseEntity.ok(CustomerDTO.fromEntity(c)))
                     .orElse(ResponseEntity.notFound().build());
         }
-        if (phone != null) {
+        
+        if (phone != null && !phone.trim().isEmpty()) {
+            log.debug("Phone search initiated for: {}", phone);
             return service.findByPhone(phone)
-                    .map(c -> ResponseEntity.ok(CustomerDTO.fromEntity(c)))
+                    .map(c -> {
+                        log.info("Phone search successful for: {}", phone);
+                        return ResponseEntity.ok(CustomerDTO.fromEntity(c));
+                    })
                     .orElse(ResponseEntity.notFound().build());
         }
+
         return ResponseEntity.badRequest().body(Map.of(
                 "error", "Bad Request",
                 "message", "Please provide either 'email' or 'phone' parameter"
