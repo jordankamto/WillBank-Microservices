@@ -311,3 +311,6 @@
 2026-01-14T16:27:16.690+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-01-14T16:32:16.896+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-01-14T16:37:16.482+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-14T16:42:16.483+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-14T16:47:16.835+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-14T16:52:16.836+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
