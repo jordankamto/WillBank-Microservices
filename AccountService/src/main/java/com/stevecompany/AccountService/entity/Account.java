@@ -57,9 +57,10 @@ public class Account {
         updatedAt = LocalDateTime.now();
     }
 
-    /* Getters & Setters */
-
+    // Getters & Setters
     public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
+
     public UUID getCustomerId() { return customerId; }
     public void setCustomerId(UUID customerId) { this.customerId = customerId; }
 
@@ -71,6 +72,12 @@ public class Account {
 
     public Status getStatus() { return status; }
     public void setStatus(Status status) { this.status = status; }
+
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    public LocalDateTime getUpdatedAt() { return updatedAt; }
+    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 
     public boolean isDeleted() { return deleted; }
     public void setDeleted(boolean deleted) { this.deleted = deleted; }

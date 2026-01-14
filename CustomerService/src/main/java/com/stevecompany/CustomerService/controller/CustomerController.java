@@ -55,14 +55,37 @@ public class CustomerController {
         return ResponseEntity.ok(CustomerDTO.fromEntity(customer));
     }
 
+//    @GetMapping("/{id}/exists")
+//    public ResponseEntity<CustomerExistsResponse> checkCustomerExists(@PathVariable UUID id) {
+//        log.info("Checking if customer exists: {}", id);
+//        Customer customer = service.findById(id);
+//        if (customer != null) {
+//            return ResponseEntity.ok(CustomerExistsResponse.found(customer));
+//        }
+//        return ResponseEntity.ok(CustomerExistsResponse.notFound());
+//    }
+    
     @GetMapping("/{id}/exists")
-    public ResponseEntity<CustomerExistsResponse> checkCustomerExists(@PathVariable UUID id) {
-        log.info("Checking if customer exists: {}", id);
-        Customer customer = service.findById(id);
-        if (customer != null) {
-            return ResponseEntity.ok(CustomerExistsResponse.found(customer));
+    public ResponseEntity<Map<String, Object>> checkExists(@PathVariable UUID id) {
+        log.info("Received GET /api/customers/{}/exists", id);
+        try {
+            Customer customer = service.get(id);
+            Map<String, Object> response = Map.of(
+                "exists", true,
+                "customerId", customer.getId(),
+                "status", customer.getStatus().name(),
+                "kycActive", customer.getStatus() == Customer.Status.ACTIVE
+            );
+            return ResponseEntity.ok(response);
+        } catch (RuntimeException e) {
+            Map<String, Object> response = Map.of(
+                "exists", false,
+                "customerId", id,
+                "status", "NOT_FOUND",
+                "kycActive", false
+            );
+            return ResponseEntity.ok(response);
         }
-        return ResponseEntity.ok(CustomerExistsResponse.notFound());
     }
 
     @GetMapping
