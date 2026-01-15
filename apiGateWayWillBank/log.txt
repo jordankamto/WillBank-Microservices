@@ -1184,3 +1184,134 @@ Caused by: java.net.NoRouteToHostException
 2026-01-15T19:05:19.522+01:00  INFO 9960 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/account/0f0836e1-a7e1-4a22-93c6-884a8fbe290c
 2026-01-15T19:08:44.355+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-01-15T19:13:44.356+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:18:44.356+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:23:44.357+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:28:44.358+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:33:44.359+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:38:44.361+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:43:44.362+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:48:44.363+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:53:44.363+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T19:58:44.373+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:03:44.375+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:08:44.376+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:13:44.377+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:18:44.386+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:23:44.387+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:28:44.397+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:33:44.397+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:38:44.398+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:43:44.399+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:48:44.400+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:53:44.401+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T20:58:44.402+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:03:44.403+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:08:44.403+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:13:44.404+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:18:44.405+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:23:44.406+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:28:44.415+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:33:44.416+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:38:44.417+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:43:44.426+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:48:44.427+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:53:44.428+01:00  INFO 9960 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:57:08.804+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
+2026-01-15T21:57:08.804+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768510628804, current=DOWN, previous=UP]
+2026-01-15T21:57:08.805+01:00  INFO 9960 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080: registering service...
+2026-01-15T21:57:08.809+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-15T21:57:08.815+01:00  INFO 9960 --- [api-gateway-willbank] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2026-01-15T21:57:08.819+01:00  INFO 9960 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T21:57:10.857+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-15T21:57:13.858+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-15T21:57:13.872+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080 - deregister  status: 200
+2026-01-15T21:57:13.873+01:00  INFO 9960 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-15T21:57:54.421+01:00  INFO 82045 --- [api-gateway-willbank] [main] c.s.a.ApiGateWayWillBankApplicationTests : Starting ApiGateWayWillBankApplicationTests using Java 17.0.17 with PID 82045 (started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
+2026-01-15T21:57:54.424+01:00  INFO 82045 --- [api-gateway-willbank] [main] c.s.a.ApiGateWayWillBankApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T21:57:55.605+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9073536b-18b5-3db5-b159-5a27272e07aa
+2026-01-15T21:57:56.971+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-01-15T21:57:56.971+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-01-15T21:57:56.972+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-01-15T21:57:56.972+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-01-15T21:57:56.972+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-01-15T21:57:56.972+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-01-15T21:57:56.973+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-01-15T21:57:56.973+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-01-15T21:57:56.973+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-01-15T21:57:56.974+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-01-15T21:57:56.974+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-01-15T21:57:56.974+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-01-15T21:57:56.975+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-01-15T21:57:56.975+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-01-15T21:57:57.501+01:00  INFO 82045 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-01-15T21:57:57.835+01:00  WARN 82045 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15T21:57:57.881+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-15T21:57:57.939+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-15T21:57:57.949+01:00  INFO 82045 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:57:57.970+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-15T21:57:57.971+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-15T21:57:57.972+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-15T21:57:57.972+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-15T21:57:57.973+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-15T21:57:57.973+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-15T21:57:57.974+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-15T21:57:58.443+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-15T21:57:58.446+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-15T21:57:58.448+01:00  INFO 82045 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-15T21:57:58.450+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768510678449 with initial instances count: 4
+2026-01-15T21:57:58.455+01:00  INFO 82045 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
+2026-01-15T21:57:58.456+01:00  INFO 82045 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768510678456, current=UP, previous=STARTING]
+2026-01-15T21:57:58.458+01:00  INFO 82045 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080: registering service...
+2026-01-15T21:57:58.504+01:00  INFO 82045 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T21:57:58.513+01:00  INFO 82045 --- [api-gateway-willbank] [main] c.s.a.ApiGateWayWillBankApplicationTests : Started ApiGateWayWillBankApplicationTests in 4.962 seconds (process running for 6.171)
+2026-01-15T21:57:59.305+01:00  INFO 82045 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
+2026-01-15T21:57:59.306+01:00  INFO 82045 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768510679306, current=DOWN, previous=UP]
+2026-01-15T21:57:59.308+01:00  INFO 82045 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080: registering service...
+2026-01-15T21:57:59.315+01:00  INFO 82045 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T21:57:59.327+01:00  INFO 82045 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-15T21:58:02.328+01:00  INFO 82045 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-15T21:58:02.335+01:00  INFO 82045 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080 - deregister  status: 200
+2026-01-15T21:58:02.336+01:00  INFO 82045 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-15T21:58:47.163+01:00  INFO 82905 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 82905 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
+2026-01-15T21:58:47.166+01:00  INFO 82905 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T21:58:48.168+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
+2026-01-15T21:58:49.257+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-01-15T21:58:49.258+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-01-15T21:58:49.258+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-01-15T21:58:49.258+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-01-15T21:58:49.258+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-01-15T21:58:49.258+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-01-15T21:58:49.258+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-01-15T21:58:49.259+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-01-15T21:58:49.259+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-01-15T21:58:49.259+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-01-15T21:58:49.259+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-01-15T21:58:49.259+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-01-15T21:58:49.260+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-01-15T21:58:49.260+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-01-15T21:58:50.444+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T21:58:50.482+01:00  INFO 82905 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-01-15T21:58:50.679+01:00  WARN 82905 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15T21:58:50.727+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-15T21:58:50.747+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-15T21:58:50.750+01:00  INFO 82905 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T21:58:50.757+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-15T21:58:50.757+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-15T21:58:50.757+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-15T21:58:50.757+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-15T21:58:50.757+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-15T21:58:50.758+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-15T21:58:50.758+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-15T21:58:51.090+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-15T21:58:51.092+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-15T21:58:51.094+01:00  INFO 82905 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-15T21:58:51.096+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768510731095 with initial instances count: 5
+2026-01-15T21:58:51.100+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
+2026-01-15T21:58:51.101+01:00  INFO 82905 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768510731101, current=UP, previous=STARTING]
+2026-01-15T21:58:51.103+01:00  INFO 82905 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080: registering service...
+2026-01-15T21:58:51.143+01:00  INFO 82905 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.1.112:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T21:58:51.217+01:00  INFO 82905 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-01-15T21:58:51.218+01:00  INFO 82905 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2026-01-15T21:58:51.894+01:00  INFO 82905 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 5.615 seconds (process running for 6.117)
+2026-01-15T22:02:05.799+01:00  WARN 82905 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.JwtAuthenticationFilter     : UNAUTHORIZED request from 0:0:0:0:0:0:0:1
+2026-01-15T22:02:13.392+01:00  INFO 82905 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/notifications/customer/3ff9a137-64fd-4d87-a0eb-03bd0839d62a

@@ -35,6 +35,10 @@ public class GatewayRoutesConfig {
                     .path("/api/dashboard/**")
                     .uri("lb://COMPOSITE-SERVICE-WILLBANK"))
                 
+                .route("notification-service", r -> r
+                    .path("/api/notifications/**")
+                    .uri("lb://NOTIFICATION-SERVICE-WILLBANK"))
+                
                 .build();
     }
 }

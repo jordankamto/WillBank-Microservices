@@ -87,19 +87,6 @@ public class TransactionController {
         }
     }
 
-    // Dans TransactionController du Transaction Service
-//    @GetMapping("/account/{accountId}")
-//    public ResponseEntity<?> getByAccount(...) {
-//    if (page >= 0 && size > 0) {
-//        Page<Transaction> transactionsPage = service.getByAccountPaginated(accountId, PageRequest.of(page, size));
-//        // Retourner le contenu au lieu de la page complète
-//        List<TransactionResponseDTO> content = transactionsPage.getContent().stream()
-//                .map(t -> TransactionResponseDTO.fromEntity(t, "Transaction retrieved successfully"))
-//                .collect(Collectors.toList());
-//        return ResponseEntity.ok(content);
-//    }
-//    // ...
-//}
     @GetMapping("/search")
     public ResponseEntity<List<TransactionResponseDTO>> search(
             @RequestParam(required = false) Transaction.Type type,
