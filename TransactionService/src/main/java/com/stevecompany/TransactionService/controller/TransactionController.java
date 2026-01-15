@@ -40,7 +40,7 @@ public class TransactionController {
 
     @PostMapping("/deposit")
     public ResponseEntity<TransactionResponseDTO> deposit(@RequestBody TransactionRequestDTO dto) {
-        log.info("Received POST /api/transactions/deposit - accountId: {}, amount: {}", 
+        log.info("Received POST /api/transactions/deposit - accountId: {}, amount: {}",
                 dto.getAccountId(), dto.getAmount());
         TransactionResponseDTO response = service.deposit(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -48,7 +48,7 @@ public class TransactionController {
 
     @PostMapping("/withdraw")
     public ResponseEntity<TransactionResponseDTO> withdraw(@RequestBody TransactionRequestDTO dto) {
-        log.info("Received POST /api/transactions/withdraw - accountId: {}, amount: {}", 
+        log.info("Received POST /api/transactions/withdraw - accountId: {}, amount: {}",
                 dto.getAccountId(), dto.getAmount());
         TransactionResponseDTO response = service.withdraw(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -56,7 +56,7 @@ public class TransactionController {
 
     @PostMapping("/transfer")
     public ResponseEntity<TransactionResponseDTO> transfer(@RequestBody TransferRequestDTO dto) {
-        log.info("Received POST /api/transactions/transfer - from: {}, to: {}, amount: {}", 
+        log.info("Received POST /api/transactions/transfer - from: {}, to: {}, amount: {}",
                 dto.getSourceAccountId(), dto.getTargetAccountId(), dto.getAmount());
         TransactionResponseDTO response = service.transfer(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
@@ -67,14 +67,17 @@ public class TransactionController {
             @PathVariable UUID accountId,
             @RequestParam(required = false, defaultValue = "0") int page,
             @RequestParam(required = false, defaultValue = "20") int size) {
-        
+
         log.info("Received GET /api/transactions/account/{} - page: {}, size: {}", accountId, page, size);
-        
+
         if (page >= 0 && size > 0) {
             // Pagination
             Page<Transaction> transactionsPage = service.getByAccountPaginated(accountId, PageRequest.of(page, size));
-            return ResponseEntity.ok(transactionsPage.map(t -> 
-                    TransactionResponseDTO.fromEntity(t, "Transaction retrieved successfully")));
+            // Retourner le contenu au lieu de la page complète
+            List<TransactionResponseDTO> content = transactionsPage.getContent().stream()
+                    .map(t -> TransactionResponseDTO.fromEntity(t, "Transaction retrieved successfully"))
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(content);
         } else {
             // Sans pagination
             List<TransactionResponseDTO> transactions = service.getByAccount(accountId).stream()
@@ -84,17 +87,30 @@ public class TransactionController {
         }
     }
 
+    // Dans TransactionController du Transaction Service
+//    @GetMapping("/account/{accountId}")
+//    public ResponseEntity<?> getByAccount(...) {
+//    if (page >= 0 && size > 0) {
+//        Page<Transaction> transactionsPage = service.getByAccountPaginated(accountId, PageRequest.of(page, size));
+//        // Retourner le contenu au lieu de la page complète
+//        List<TransactionResponseDTO> content = transactionsPage.getContent().stream()
+//                .map(t -> TransactionResponseDTO.fromEntity(t, "Transaction retrieved successfully"))
+//                .collect(Collectors.toList());
+//        return ResponseEntity.ok(content);
+//    }
+//    // ...
+//}
     @GetMapping("/search")
     public ResponseEntity<List<TransactionResponseDTO>> search(
             @RequestParam(required = false) Transaction.Type type,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-        
+
         log.info("Received GET /api/transactions/search - type: {}, date: {}", type, date);
-        
+
         List<TransactionResponseDTO> transactions = service.search(type, date).stream()
                 .map(t -> TransactionResponseDTO.fromEntity(t, "Transaction retrieved successfully"))
                 .collect(Collectors.toList());
-        
+
         return ResponseEntity.ok(transactions);
     }
 }

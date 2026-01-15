@@ -20,14 +20,21 @@ public class GatewayRoutesConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("customer-service", r -> r
-                .path("/api/customers/**")
-                .uri("lb://CUSTOMER-SERVICE-WILLBANK"))
+                    .path("/api/customers/**")
+                    .uri("lb://CUSTOMER-SERVICE-WILLBANK"))
+                
                 .route("account-service", r -> r
-                .path("/api/accounts/**")
-                .uri("lb://ACCOUNT-SERVICE-WILLBANK"))
+                    .path("/api/accounts/**")
+                    .uri("lb://ACCOUNT-SERVICE-WILLBANK"))
+                
                 .route("transaction-service", r -> r
-                .path("/api/transactions/**")
-                .uri("lb://TRANSACTION-SERVICE-WILLBANK"))
+                    .path("/api/transactions/**")
+                    .uri("lb://TRANSACTION-SERVICE-WILLBANK"))
+                
+                .route("composite-service", r -> r
+                    .path("/api/dashboard/**")
+                    .uri("lb://COMPOSITE-SERVICE-WILLBANK"))
+                
                 .build();
     }
 }
