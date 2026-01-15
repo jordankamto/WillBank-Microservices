@@ -1315,3 +1315,5 @@ Caused by: java.net.NoRouteToHostException
 2026-01-15T21:58:51.894+01:00  INFO 82905 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 5.615 seconds (process running for 6.117)
 2026-01-15T22:02:05.799+01:00  WARN 82905 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.JwtAuthenticationFilter     : UNAUTHORIZED request from 0:0:0:0:0:0:0:1
 2026-01-15T22:02:13.392+01:00  INFO 82905 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/notifications/customer/3ff9a137-64fd-4d87-a0eb-03bd0839d62a
+2026-01-15T22:03:50.760+01:00  INFO 82905 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T22:08:50.761+01:00  INFO 82905 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
