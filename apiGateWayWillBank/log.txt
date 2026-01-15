@@ -918,3 +918,38 @@ Caused by: java.net.NoRouteToHostException
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
+2026-01-15T11:39:26.665+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:43:32.939+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
+2026-01-15T11:43:48.673+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T11:43:59.888+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/search
+2026-01-15T11:44:26.666+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:48:25.853+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/search
+2026-01-15T11:49:25.763+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:50:37.500+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions
+2026-01-15T11:51:22.160+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions
+2026-01-15T11:54:09.137+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions
+2026-01-15T11:54:25.764+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:54:45.365+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions/transfer
+2026-01-15T11:57:34.635+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions/transfer
+2026-01-15T11:59:25.765+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:59:55.915+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions/transfer
+2026-01-15T12:00:48.913+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T12:01:12.885+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/07a551c7-8958-48d7-bf16-d9a88bbd744c/suspend
+2026-01-15T12:02:39.979+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/accounts/07a551c7-8958-48d7-bf16-d9a88bbd744c/block
+2026-01-15T12:03:06.097+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions/transfer
+2026-01-15T12:03:48.829+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions/transfer
+2026-01-15T12:04:25.766+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:09:25.767+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:14:25.767+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:19:25.768+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:24:25.769+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:29:25.770+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:34:25.770+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:39:25.771+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:44:25.772+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:49:25.773+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:54:25.773+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T12:59:25.774+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T13:04:25.775+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T13:09:25.776+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T13:14:25.776+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
