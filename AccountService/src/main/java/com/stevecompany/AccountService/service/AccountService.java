@@ -10,7 +10,10 @@ package com.stevecompany.AccountService.service;
  */
 import com.stevecompany.AccountService.client.CustomerServiceClient;
 import com.stevecompany.AccountService.entity.Account;
+import com.stevecompany.AccountService.event.AccountCreatedEvent;
+import com.stevecompany.AccountService.event.AccountUpdatedEvent;
 import com.stevecompany.AccountService.exception.BusinessException;
+import com.stevecompany.AccountService.messaging.AccountEventPublisher;
 import com.stevecompany.AccountService.repository.AccountRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,11 +31,14 @@ public class AccountService {
     private static final Logger log = LoggerFactory.getLogger(AccountService.class);
     private final AccountRepository repository;
     private final CustomerServiceClient customerClient;
+    private final AccountEventPublisher eventPublisher;
 
     public AccountService(AccountRepository repository,
-                          CustomerServiceClient customerClient) {
+                          CustomerServiceClient customerClient,
+                          AccountEventPublisher eventPublisher) {
         this.repository = repository;
         this.customerClient = customerClient;
+        this.eventPublisher = eventPublisher;
     }
 
     public Account create(Account account) {
@@ -59,6 +65,17 @@ public class AccountService {
 
         Account saved = repository.save(account);
         log.info("Account created successfully with ID: {}", saved.getId());
+        
+        // Publier événement AccountCreated
+        eventPublisher.publishAccountCreated(
+                new AccountCreatedEvent(
+                        saved.getId(),
+                        saved.getCustomerId(),
+                        saved.getType().name(),
+                        saved.getBalance()
+                )
+        );
+        
         return saved;
     }
 
@@ -81,14 +98,34 @@ public class AccountService {
         Account acc = get(id);
         log.info("Freezing account {}", id);
         acc.setStatus(Account.Status.FROZEN);
-        repository.save(acc);
+        Account saved = repository.save(acc);
+        
+        // Publier événement AccountUpdated
+        eventPublisher.publishAccountUpdated(
+                new AccountUpdatedEvent(
+                        saved.getId(),
+                        saved.getStatus().name(),
+                        saved.getBalance(),
+                        "FREEZE"
+                )
+        );
     }
 
     public void block(UUID id) {
         Account acc = get(id);
         log.info("Blocking account {}", id);
         acc.setStatus(Account.Status.BLOCKED);
-        repository.save(acc);
+        Account saved = repository.save(acc);
+        
+        // Publier événement AccountUpdated
+        eventPublisher.publishAccountUpdated(
+                new AccountUpdatedEvent(
+                        saved.getId(),
+                        saved.getStatus().name(),
+                        saved.getBalance(),
+                        "BLOCK"
+                )
+        );
     }
 
     public void close(UUID id) {
@@ -100,13 +137,33 @@ public class AccountService {
         }
         
         acc.setStatus(Account.Status.CLOSED);
-        repository.save(acc);
+        Account saved = repository.save(acc);
+        
+        // Publier événement AccountUpdated
+        eventPublisher.publishAccountUpdated(
+                new AccountUpdatedEvent(
+                        saved.getId(),
+                        saved.getStatus().name(),
+                        saved.getBalance(),
+                        "CLOSE"
+                )
+        );
     }
 
     public void updateBalance(UUID id, BigDecimal balance) {
         Account acc = get(id);
         log.info("Updating balance for account {} from {} to {}", id, acc.getBalance(), balance);
         acc.setBalance(balance);
-        repository.save(acc);
+        Account saved = repository.save(acc);
+        
+        // Publier événement AccountUpdated
+        eventPublisher.publishAccountUpdated(
+                new AccountUpdatedEvent(
+                        saved.getId(),
+                        saved.getStatus().name(),
+                        saved.getBalance(),
+                        "BALANCE_UPDATE"
+                )
+        );
     }
 }
