@@ -22,6 +22,9 @@ public class Transaction {
     private UUID id;
 
     private UUID accountId;
+    
+    // Pour les transferts : compte destination
+    private UUID targetAccountId;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -48,17 +51,28 @@ public class Transaction {
         createdAt = LocalDateTime.now();
     }
 
-    /* getters & setters */
+    // Getters & Setters
     public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
+
     public UUID getAccountId() { return accountId; }
     public void setAccountId(UUID accountId) { this.accountId = accountId; }
+
+    public UUID getTargetAccountId() { return targetAccountId; }
+    public void setTargetAccountId(UUID targetAccountId) { this.targetAccountId = targetAccountId; }
+
     public Type getType() { return type; }
     public void setType(Type type) { this.type = type; }
+
     public BigDecimal getAmount() { return amount; }
     public void setAmount(BigDecimal amount) { this.amount = amount; }
+
     public Status getStatus() { return status; }
     public void setStatus(Status status) { this.status = status; }
+
     public String getFailureReason() { return failureReason; }
     public void setFailureReason(String failureReason) { this.failureReason = failureReason; }
+
     public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }

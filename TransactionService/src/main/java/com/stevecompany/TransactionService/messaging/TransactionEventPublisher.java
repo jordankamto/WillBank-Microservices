@@ -10,12 +10,15 @@ package com.stevecompany.TransactionService.messaging;
  */
 import com.stevecompany.TransactionService.entity.Transaction;
 import com.stevecompany.TransactionService.messaging.event.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TransactionEventPublisher {
 
+    private static final Logger log = LoggerFactory.getLogger(TransactionEventPublisher.class);
     private final RabbitTemplate rabbitTemplate;
 
     public TransactionEventPublisher(RabbitTemplate rabbitTemplate) {
@@ -23,16 +26,39 @@ public class TransactionEventPublisher {
     }
 
     public void publishSuccess(Transaction tx) {
-        TransactionCompletedEvent event = new TransactionCompletedEvent();
-        event.transactionId = tx.getId();
-        event.accountId = tx.getAccountId();
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE, "transaction.success", event);
+        log.info("Publishing TransactionCompletedEvent for transaction: {}", tx.getId());
+        
+        TransactionCompletedEvent event = new TransactionCompletedEvent(
+                tx.getId(),
+                tx.getAccountId(),
+                tx.getTargetAccountId(),
+                tx.getType().name(),
+                tx.getAmount()
+        );
+        
+        rabbitTemplate.convertAndSend(
+                RabbitMQConfig.EXCHANGE,
+                RabbitMQConfig.ROUTING_KEY_SUCCESS,
+                event
+        );
     }
 
     public void publishFailure(Transaction tx) {
-        TransactionFailedEvent event = new TransactionFailedEvent();
-        event.transactionId = tx.getId();
-        event.reason = tx.getFailureReason();
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE, "transaction.failed", event);
+        log.warn("Publishing TransactionFailedEvent for transaction: {} - reason: {}", 
+                tx.getId(), tx.getFailureReason());
+        
+        TransactionFailedEvent event = new TransactionFailedEvent(
+                tx.getId(),
+                tx.getAccountId(),
+                tx.getType().name(),
+                tx.getAmount(),
+                tx.getFailureReason()
+        );
+        
+        rabbitTemplate.convertAndSend(
+                RabbitMQConfig.EXCHANGE,
+                RabbitMQConfig.ROUTING_KEY_FAILED,
+                event
+        );
     }
 }

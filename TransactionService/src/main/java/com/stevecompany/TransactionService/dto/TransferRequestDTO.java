@@ -13,7 +13,17 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 public class TransferRequestDTO {
-    public UUID sourceAccountId;
-    public UUID targetAccountId;
-    public BigDecimal amount;
+    private UUID sourceAccountId;
+    private UUID targetAccountId;
+    private BigDecimal amount;
+
+    // Getters & Setters
+    public UUID getSourceAccountId() { return sourceAccountId; }
+    public void setSourceAccountId(UUID sourceAccountId) { this.sourceAccountId = sourceAccountId; }
+
+    public UUID getTargetAccountId() { return targetAccountId; }
+    public void setTargetAccountId(UUID targetAccountId) { this.targetAccountId = targetAccountId; }
+
+    public BigDecimal getAmount() { return amount; }
+    public void setAmount(BigDecimal amount) { this.amount = amount; }
 }

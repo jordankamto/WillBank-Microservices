@@ -1,330 +1,920 @@
-2026-01-14T11:47:44.438+01:00  INFO 15083 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 15083 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
-2026-01-14T11:47:44.446+01:00  INFO 15083 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
-2026-01-14T11:47:45.761+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
-2026-01-14T11:47:47.436+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2026-01-14T11:47:47.437+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2026-01-14T11:47:47.437+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2026-01-14T11:47:47.437+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2026-01-14T11:47:47.437+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2026-01-14T11:47:47.438+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2026-01-14T11:47:47.438+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2026-01-14T11:47:47.438+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2026-01-14T11:47:47.438+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2026-01-14T11:47:47.439+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2026-01-14T11:47:47.439+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2026-01-14T11:47:47.439+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2026-01-14T11:47:47.439+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2026-01-14T11:47:47.439+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2026-01-14T11:47:48.179+01:00  INFO 15083 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-01-14T11:47:48.506+01:00  WARN 15083 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-14T11:47:48.557+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-14T11:47:48.594+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-14T11:47:48.601+01:00  INFO 15083 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T11:47:48.616+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-14T11:47:48.617+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-14T11:47:48.617+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-14T11:47:48.618+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-14T11:47:48.618+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-14T11:47:48.618+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-14T11:47:48.619+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-14T11:47:49.061+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-14T11:47:49.064+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-14T11:47:49.066+01:00  INFO 15083 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-14T11:47:49.068+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768387669067 with initial instances count: 1
-2026-01-14T11:47:49.072+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
-2026-01-14T11:47:49.074+01:00  INFO 15083 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768387669074, current=UP, previous=STARTING]
-2026-01-14T11:47:49.076+01:00  INFO 15083 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080: registering service...
-2026-01-14T11:47:49.116+01:00  INFO 15083 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T11:47:49.234+01:00  INFO 15083 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-01-14T11:47:49.236+01:00  INFO 15083 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2026-01-14T11:47:49.916+01:00  INFO 15083 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 6.819 seconds (process running for 7.359)
-2026-01-14T11:50:42.875+01:00  INFO 15083 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T11:50:42.941+01:00  WARN 15083 --- [api-gateway-willbank] [reactor-http-epoll-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: CUSTOMER-SERVICE-WILLBANK
-2026-01-14T11:50:53.562+01:00  INFO 15083 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T11:50:53.565+01:00  WARN 15083 --- [api-gateway-willbank] [reactor-http-epoll-3] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: CUSTOMER-SERVICE-WILLBANK
-2026-01-14T11:51:22.312+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
-2026-01-14T11:51:22.313+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768387882313, current=DOWN, previous=UP]
-2026-01-14T11:51:22.314+01:00  INFO 15083 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080: registering service...
-2026-01-14T11:51:22.318+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-14T11:51:22.324+01:00  INFO 15083 --- [api-gateway-willbank] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2026-01-14T11:51:22.331+01:00  INFO 15083 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T11:51:24.358+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-01-14T11:51:27.360+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-01-14T11:51:27.370+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - deregister  status: 200
-2026-01-14T11:51:27.371+01:00  INFO 15083 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-01-14T11:52:07.562+01:00  INFO 16164 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 16164 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
-2026-01-14T11:52:07.566+01:00  INFO 16164 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
-2026-01-14T11:52:09.027+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
-2026-01-14T11:52:10.581+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2026-01-14T11:52:10.582+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2026-01-14T11:52:10.582+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2026-01-14T11:52:10.582+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2026-01-14T11:52:10.583+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2026-01-14T11:52:10.583+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2026-01-14T11:52:10.583+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2026-01-14T11:52:10.583+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2026-01-14T11:52:10.584+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2026-01-14T11:52:10.584+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2026-01-14T11:52:10.584+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2026-01-14T11:52:10.585+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2026-01-14T11:52:10.585+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2026-01-14T11:52:10.585+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2026-01-14T11:52:11.919+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T11:52:11.966+01:00  INFO 16164 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-01-14T11:52:12.288+01:00  WARN 16164 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-14T11:52:12.325+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-14T11:52:12.350+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-14T11:52:12.355+01:00  INFO 16164 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T11:52:12.367+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-14T11:52:12.368+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-14T11:52:12.368+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-14T11:52:12.368+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-14T11:52:12.368+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-14T11:52:12.368+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-14T11:52:12.369+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-14T11:52:12.738+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-14T11:52:12.741+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-14T11:52:12.745+01:00  INFO 16164 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-14T11:52:12.748+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768387932747 with initial instances count: 1
-2026-01-14T11:52:12.752+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
-2026-01-14T11:52:12.753+01:00  INFO 16164 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768387932753, current=UP, previous=STARTING]
-2026-01-14T11:52:12.755+01:00  INFO 16164 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080: registering service...
-2026-01-14T11:52:12.797+01:00  INFO 16164 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T11:52:12.902+01:00  INFO 16164 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-01-14T11:52:12.904+01:00  INFO 16164 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2026-01-14T11:52:14.261+01:00  INFO 16164 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 8.166 seconds (process running for 8.777)
-2026-01-14T11:57:12.371+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:02:12.372+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:03:42.034+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T12:07:12.373+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:12:12.374+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:17:12.375+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:22:12.376+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:27:12.377+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:29:45.945+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a
-2026-01-14T12:30:01.269+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/
-2026-01-14T12:30:07.126+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T12:30:20.156+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/5fb71c24-be25-4c72-a791-09c4f5e73a89
-2026-01-14T12:32:12.378+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:37:12.380+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:42:12.381+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:47:12.382+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:52:12.383+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T12:57:12.384+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:02:12.385+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:07:12.386+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:12:12.387+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:17:12.388+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:22:12.389+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:27:12.390+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:32:12.391+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:37:12.392+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:40:48.192+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T13:42:12.393+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:43:06.108+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T13:44:18.190+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a/exists
-2026-01-14T13:47:12.394+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:52:12.395+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:57:12.395+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T13:58:26.113+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T14:00:01.801+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T14:02:06.154+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?email=jordan.kamgaing@stevecompany.com
-2026-01-14T14:02:12.396+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:02:50.833+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=+237656955045
-2026-01-14T14:02:59.558+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237656955045
-2026-01-14T14:04:01.821+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=656955045
-2026-01-14T14:04:38.072+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=+237670000000
-2026-01-14T14:04:54.945+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=%22+237670000000%22
-2026-01-14T14:05:03.190+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=+237670000000
-2026-01-14T14:05:08.199+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237670000000
-2026-01-14T14:07:12.397+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:07:29.826+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237670000000
-2026-01-14T14:07:46.750+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?email=jordan.kamgaing@stevecompany.com
-2026-01-14T14:12:12.398+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:17:12.399+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:22:12.400+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:27:12.401+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:32:12.401+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:37:12.402+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:39:03.642+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a/suspend
-2026-01-14T14:39:24.009+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a/suspend
-2026-01-14T14:40:04.724+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a
-2026-01-14T14:40:37.167+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a/suspend
-2026-01-14T14:42:12.403+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:47:12.404+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:49:37.153+01:00  INFO 16164 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237%20670%20000%20000
-2026-01-14T14:52:12.404+01:00  INFO 16164 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:54:45.667+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
-2026-01-14T14:54:45.668+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768398885668, current=DOWN, previous=UP]
-2026-01-14T14:54:45.669+01:00  INFO 16164 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080: registering service...
-2026-01-14T14:54:45.673+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
-2026-01-14T14:54:45.679+01:00  INFO 16164 --- [api-gateway-willbank] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
-2026-01-14T14:54:45.684+01:00  INFO 16164 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T14:54:47.712+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-01-14T14:54:50.713+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-01-14T14:54:50.719+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - deregister  status: 200
-2026-01-14T14:54:50.719+01:00  INFO 16164 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-01-14T14:57:10.443+01:00  INFO 38173 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 38173 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
-2026-01-14T14:57:10.448+01:00  INFO 38173 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
-2026-01-14T14:57:11.736+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
-2026-01-14T14:57:13.368+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T14:57:13.703+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2026-01-14T14:57:13.704+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2026-01-14T14:57:13.704+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2026-01-14T14:57:13.704+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2026-01-14T14:57:13.704+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2026-01-14T14:57:13.705+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2026-01-14T14:57:13.705+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2026-01-14T14:57:13.705+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2026-01-14T14:57:13.705+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2026-01-14T14:57:13.705+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2026-01-14T14:57:13.706+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2026-01-14T14:57:13.706+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2026-01-14T14:57:13.706+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2026-01-14T14:57:13.706+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2026-01-14T14:57:14.942+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T14:57:14.982+01:00  INFO 38173 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-01-14T14:57:15.995+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T14:57:16.048+01:00  WARN 38173 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-14T14:57:16.100+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-14T14:57:16.136+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-14T14:57:16.144+01:00  INFO 38173 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T14:57:16.160+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-14T14:57:16.161+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-14T14:57:16.161+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-14T14:57:16.161+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-14T14:57:16.162+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-14T14:57:16.162+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-14T14:57:16.163+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-14T14:57:16.542+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-14T14:57:16.544+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-14T14:57:16.546+01:00  INFO 38173 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-14T14:57:16.548+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768399036547 with initial instances count: 1
-2026-01-14T14:57:16.551+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
-2026-01-14T14:57:16.552+01:00  INFO 38173 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768399036552, current=UP, previous=STARTING]
-2026-01-14T14:57:16.554+01:00  INFO 38173 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
-2026-01-14T14:57:16.595+01:00  INFO 38173 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T14:57:16.682+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
-2026-01-14T14:57:16.684+01:00  INFO 38173 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
-2026-01-14T14:57:17.685+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T14:57:18.687+01:00  INFO 38173 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T14:57:18.721+01:00  INFO 38173 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 9.991 seconds (process running for 10.551)
-2026-01-14T14:57:32.418+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237670000000
-2026-01-14T14:57:36.374+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237670000000
-2026-01-14T15:00:51.361+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=+237670000000
-2026-01-14T15:01:04.538+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=+237670000000
-2026-01-14T15:02:16.166+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:03:02.681+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=+237670000000
-2026-01-14T15:03:07.200+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?phone=237670000000
-2026-01-14T15:07:16.166+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:08:43.422+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers?email=test@example.com
-2026-01-14T15:12:16.167+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:17:16.168+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:22:16.169+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:27:16.171+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:29:32.909+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a/exists
-2026-01-14T15:32:16.172+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:37:16.173+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:37:16.766+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/customers/3ff9a137-64fd-4d87-a0eb-03bd0839d62a/activate
-2026-01-14T15:42:16.174+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:47:16.175+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:52:16.176+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:57:15.226+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:58:45.138+01:00  INFO 45421 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 45421 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
-2026-01-14T15:58:45.140+01:00  INFO 45421 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
-2026-01-14T15:58:46.237+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
-2026-01-14T15:58:47.748+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T15:58:48.159+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
-2026-01-14T15:58:48.159+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
-2026-01-14T15:58:48.159+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
-2026-01-14T15:58:48.159+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
-2026-01-14T15:58:48.159+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
-2026-01-14T15:58:48.160+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
-2026-01-14T15:58:48.160+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
-2026-01-14T15:58:48.160+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
-2026-01-14T15:58:48.160+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
-2026-01-14T15:58:48.160+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
-2026-01-14T15:58:48.161+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
-2026-01-14T15:58:48.161+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2026-01-14T15:58:48.161+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
-2026-01-14T15:58:48.161+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2026-01-14T15:58:49.343+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2026-01-14T15:58:49.372+01:00  INFO 45421 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2026-01-14T15:58:50.319+01:00  WARN 45421 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2026-01-14T15:58:50.354+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2026-01-14T15:58:50.377+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2026-01-14T15:58:50.381+01:00  INFO 45421 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T15:58:50.388+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2026-01-14T15:58:50.388+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2026-01-14T15:58:50.388+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2026-01-14T15:58:50.389+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2026-01-14T15:58:50.389+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2026-01-14T15:58:50.389+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2026-01-14T15:58:50.389+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2026-01-14T15:58:50.737+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2026-01-14T15:58:50.739+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2026-01-14T15:58:50.741+01:00  INFO 45421 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2026-01-14T15:58:50.743+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768402730742 with initial instances count: 2
-2026-01-14T15:58:50.746+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
-2026-01-14T15:58:50.746+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768402730746, current=UP, previous=STARTING]
-2026-01-14T15:58:50.748+01:00  INFO 45421 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
-2026-01-14T15:58:50.780+01:00  INFO 45421 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T15:58:52.888+01:00  INFO 45421 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
-2026-01-14T15:58:52.889+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768402732889, current=DOWN, previous=UP]
-2026-01-14T15:58:52.890+01:00  INFO 45421 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
-2026-01-14T15:58:52.890+01:00  WARN 45421 --- [api-gateway-willbank] [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-01-14T15:58:52.898+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2026-01-14T15:58:52.898+01:00  INFO 45421 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T15:58:52.899+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2026-01-14T15:58:52.906+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - deregister  status: 200
-2026-01-14T15:58:52.907+01:00  INFO 45421 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2026-01-14T15:59:16.247+01:00  INFO 38173 --- [api-gateway-willbank] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - Re-registering apps/API-GATEWAY-WILLBANK
-2026-01-14T15:59:16.248+01:00  INFO 38173 --- [api-gateway-willbank] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
-2026-01-14T15:59:16.256+01:00  INFO 38173 --- [api-gateway-willbank] [DiscoveryClient-HeartbeatExecutor-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
-2026-01-14T16:00:35.774+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
-2026-01-14T16:02:15.868+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:06:30.531+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:06:35.418+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:07:15.869+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:07:17.515+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:07:38.852+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/
-2026-01-14T16:07:44.650+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
-2026-01-14T16:07:59.354+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:08:53.662+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:12:15.870+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:12:52.145+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
-2026-01-14T16:13:07.765+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:13:28.342+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:15:31.747+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
-2026-01-14T16:16:37.285+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
-2026-01-14T16:16:47.965+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
-2026-01-14T16:17:15.870+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:18:31.447+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72
-2026-01-14T16:19:07.996+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/customer/3ff9a137-64fd-4d87-a0eb-03bd0839d62a
-2026-01-14T16:21:11.802+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72/balance
-2026-01-14T16:21:26.530+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72/balance
-2026-01-14T16:21:49.717+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72/freeze
-2026-01-14T16:21:59.101+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72/block
-2026-01-14T16:22:12.061+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request PUT http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72/close
-2026-01-14T16:22:16.207+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:23:19.240+01:00  INFO 38173 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72
-2026-01-14T16:27:16.690+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:32:16.896+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:37:16.482+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:42:16.483+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:47:16.835+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:52:16.836+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T16:57:16.837+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:02:16.168+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:07:16.169+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:12:16.753+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:17:21.841+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:22:26.114+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:27:39.801+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:32:49.123+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:37:59.256+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:43:07.111+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:48:21.225+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:53:29.262+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T17:58:45.297+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2026-01-14T18:03:55.681+01:00  INFO 38173 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T10:39:56.103+01:00  INFO 77654 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 77654 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
+2026-01-15T10:39:56.111+01:00  INFO 77654 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T10:39:57.212+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
+2026-01-15T10:39:58.706+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:39:59.139+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-01-15T10:39:59.139+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-01-15T10:39:59.139+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-01-15T10:39:59.139+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-01-15T10:39:59.140+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-01-15T10:39:59.140+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-01-15T10:39:59.140+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-01-15T10:39:59.140+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-01-15T10:39:59.140+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-01-15T10:39:59.141+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-01-15T10:39:59.141+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-01-15T10:39:59.141+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-01-15T10:39:59.141+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-01-15T10:39:59.141+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-01-15T10:40:00.343+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:40:00.386+01:00  INFO 77654 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-01-15T10:40:01.399+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:40:01.433+01:00  WARN 77654 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15T10:40:01.458+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-15T10:40:01.475+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-15T10:40:01.479+01:00  INFO 77654 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T10:40:01.485+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-15T10:40:01.485+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-15T10:40:01.486+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-15T10:40:01.486+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-15T10:40:01.486+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-15T10:40:01.486+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-15T10:40:01.486+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-15T10:40:01.802+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-15T10:40:01.803+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-15T10:40:01.805+01:00  INFO 77654 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-15T10:40:01.806+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768470001806 with initial instances count: 2
+2026-01-15T10:40:01.809+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
+2026-01-15T10:40:01.810+01:00  INFO 77654 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768470001810, current=UP, previous=STARTING]
+2026-01-15T10:40:01.812+01:00  INFO 77654 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
+2026-01-15T10:40:01.847+01:00  INFO 77654 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T10:40:01.917+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-01-15T10:40:01.919+01:00  INFO 77654 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2026-01-15T10:40:02.920+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:40:03.921+01:00  INFO 77654 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:40:03.952+01:00  INFO 77654 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 9.548 seconds (process running for 10.102)
+2026-01-15T10:40:44.381+01:00  WARN 77654 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.JwtAuthenticationFilter     : UNAUTHORIZED request from 0:0:0:0:0:0:0:1
+2026-01-15T10:41:04.051+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions
+2026-01-15T10:42:15.668+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions
+2026-01-15T10:43:39.119+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/search
+2026-01-15T10:43:56.164+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
+2026-01-15T10:44:24.034+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T10:44:54.098+01:00 ERROR 77654 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5d28479b-6]  500 Server Error for HTTP GET "/api/accounts"
+
+io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /192.168.1.112:8082
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:160) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:408) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:45:01.488+01:00  INFO 77654 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T10:46:22.147+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T10:46:52.181+01:00 ERROR 77654 --- [api-gateway-willbank] [reactor-http-epoll-3] a.w.r.e.AbstractErrorWebExceptionHandler : [2bff52e2-7]  500 Server Error for HTTP GET "/api/accounts"
+
+io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /192.168.1.112:8082
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:160) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:408) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:48:34.901+01:00  INFO 77654 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T10:49:04.936+01:00 ERROR 77654 --- [api-gateway-willbank] [reactor-http-epoll-5] a.w.r.e.AbstractErrorWebExceptionHandler : [c5f213a7-8]  500 Server Error for HTTP GET "/api/accounts"
+
+io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /192.168.1.112:8082
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:160) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:408) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:49:27.830+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
+2026-01-15T10:49:27.831+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768470567831, current=DOWN, previous=UP]
+2026-01-15T10:49:27.831+01:00  INFO 77654 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
+2026-01-15T10:49:27.835+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-15T10:49:27.841+01:00  INFO 77654 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T10:49:27.841+01:00  INFO 77654 --- [api-gateway-willbank] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2026-01-15T10:49:29.872+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-15T10:49:32.873+01:00  WARN 77654 --- [api-gateway-willbank] [DiscoveryClient-%d] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2026-01-15T10:49:32.873+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-15T10:49:32.879+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - deregister  status: 200
+2026-01-15T10:49:32.879+01:00  INFO 77654 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-15T10:50:03.413+01:00  INFO 79561 --- [api-gateway-willbank] [main] c.s.a.ApiGateWayWillBankApplicationTests : Starting ApiGateWayWillBankApplicationTests using Java 17.0.17 with PID 79561 (started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
+2026-01-15T10:50:03.414+01:00  INFO 79561 --- [api-gateway-willbank] [main] c.s.a.ApiGateWayWillBankApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T10:50:04.479+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=9073536b-18b5-3db5-b159-5a27272e07aa
+2026-01-15T10:50:05.760+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-01-15T10:50:05.761+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-01-15T10:50:05.761+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-01-15T10:50:05.761+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-01-15T10:50:05.761+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-01-15T10:50:05.762+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-01-15T10:50:05.762+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-01-15T10:50:05.762+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-01-15T10:50:05.763+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-01-15T10:50:05.763+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-01-15T10:50:05.763+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-01-15T10:50:05.763+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-01-15T10:50:05.764+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-01-15T10:50:05.764+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-01-15T10:50:06.277+01:00  INFO 79561 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-01-15T10:50:06.588+01:00  WARN 79561 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15T10:50:06.613+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-15T10:50:06.645+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-15T10:50:06.648+01:00  INFO 79561 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T10:50:06.655+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-15T10:50:06.656+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-15T10:50:06.656+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-15T10:50:06.656+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-15T10:50:06.656+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-15T10:50:06.656+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-15T10:50:06.656+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-15T10:50:06.982+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-15T10:50:06.984+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-15T10:50:06.986+01:00  INFO 79561 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-15T10:50:06.988+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768470606987 with initial instances count: 3
+2026-01-15T10:50:06.991+01:00  INFO 79561 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
+2026-01-15T10:50:06.992+01:00  INFO 79561 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768470606992, current=UP, previous=STARTING]
+2026-01-15T10:50:06.995+01:00  INFO 79561 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080: registering service...
+2026-01-15T10:50:07.045+01:00  INFO 79561 --- [api-gateway-willbank] [main] c.s.a.ApiGateWayWillBankApplicationTests : Started ApiGateWayWillBankApplicationTests in 4.517 seconds (process running for 5.927)
+2026-01-15T10:50:07.048+01:00  INFO 79561 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T10:50:07.672+01:00  INFO 79561 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
+2026-01-15T10:50:07.673+01:00  INFO 79561 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768470607673, current=DOWN, previous=UP]
+2026-01-15T10:50:07.673+01:00  INFO 79561 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080: registering service...
+2026-01-15T10:50:07.678+01:00  INFO 79561 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T10:50:07.688+01:00  INFO 79561 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-15T10:50:10.689+01:00  INFO 79561 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-15T10:50:10.697+01:00  INFO 79561 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/192.168.116.17:api-gateway-willbank:8080 - deregister  status: 200
+2026-01-15T10:50:10.698+01:00  INFO 79561 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-15T10:50:21.596+01:00  INFO 79839 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 79839 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
+2026-01-15T10:50:21.598+01:00  INFO 79839 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T10:50:22.655+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
+2026-01-15T10:50:24.139+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:50:24.582+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-01-15T10:50:24.583+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-01-15T10:50:24.583+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-01-15T10:50:24.583+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-01-15T10:50:24.583+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-01-15T10:50:24.584+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-01-15T10:50:24.584+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-01-15T10:50:24.584+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-01-15T10:50:24.584+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-01-15T10:50:24.584+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-01-15T10:50:24.585+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-01-15T10:50:24.585+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-01-15T10:50:24.585+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-01-15T10:50:24.585+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-01-15T10:50:25.793+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:50:25.837+01:00  INFO 79839 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-01-15T10:50:26.851+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:50:26.879+01:00  WARN 79839 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15T10:50:26.908+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-15T10:50:26.928+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-15T10:50:26.932+01:00  INFO 79839 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T10:50:26.940+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-15T10:50:26.940+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-15T10:50:26.940+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-15T10:50:26.940+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-15T10:50:26.940+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-15T10:50:26.941+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-15T10:50:26.941+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-15T10:50:27.292+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-15T10:50:27.294+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-15T10:50:27.296+01:00  INFO 79839 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-15T10:50:27.298+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768470627297 with initial instances count: 4
+2026-01-15T10:50:27.301+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
+2026-01-15T10:50:27.301+01:00  INFO 79839 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768470627301, current=UP, previous=STARTING]
+2026-01-15T10:50:27.303+01:00  INFO 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
+2026-01-15T10:50:27.335+01:00  INFO 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T10:50:27.420+01:00  INFO 79839 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-01-15T10:50:27.422+01:00  INFO 79839 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2026-01-15T10:50:29.039+01:00  INFO 79839 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 9.123 seconds (process running for 9.709)
+2026-01-15T10:51:04.173+01:00  INFO 79839 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T10:51:34.364+01:00 ERROR 79839 --- [api-gateway-willbank] [reactor-http-epoll-3] a.w.r.e.AbstractErrorWebExceptionHandler : [63408d1b-1]  500 Server Error for HTTP GET "/api/accounts"
+
+io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /192.168.1.112:8082
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:160) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:408) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:52:36.203+01:00  INFO 79839 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/
+2026-01-15T10:53:05.881+01:00  INFO 79839 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72
+2026-01-15T10:53:35.914+01:00 ERROR 79839 --- [api-gateway-willbank] [reactor-http-epoll-7] a.w.r.e.AbstractErrorWebExceptionHandler : [5d16e5cb-3]  500 Server Error for HTTP GET "/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72"
+
+io.netty.channel.ConnectTimeoutException: connection timed out after 30000 ms: /192.168.1.112:8082
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts/61b4bae3-6636-40ed-8582-be9b6e113c72" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe$2.run(AbstractEpollChannel.java:615) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:160) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:408) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+		at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:54:43.415+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY-WILLBANK with eureka with status DOWN
+2026-01-15T10:54:43.423+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768470883423, current=DOWN, previous=UP]
+2026-01-15T10:54:43.431+01:00  INFO 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
+2026-01-15T10:54:43.448+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] o.s.b.w.embedded.netty.GracefulShutdown  : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-15T10:54:43.471+01:00  INFO 79839 --- [api-gateway-willbank] [netty-shutdown] o.s.b.w.embedded.netty.GracefulShutdown  : Graceful shutdown complete
+2026-01-15T10:54:43.497+01:00  INFO 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK": Connect to http://localhost:8761 failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK": Connect to http://localhost:8761 failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:88)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 21 more
+
+2026-01-15T10:54:43.499+01:00  WARN 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK": Connect to http://localhost:8761 failed: Connection refused
+2026-01-15T10:54:43.547+01:00  INFO 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK": Connect to http://localhost:8761 failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK": Connect to http://localhost:8761 failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125)
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:88)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 22 more
+
+2026-01-15T10:54:43.550+01:00  WARN 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK": Connect to http://localhost:8761 failed: Connection refused
+2026-01-15T10:54:43.551+01:00  WARN 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration failed Cannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.5.jar:2.0.5]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:54:43.552+01:00  WARN 79839 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:828) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:125) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.InstanceInfoReplicator$2.run(InstanceInfoReplicator.java:105) ~[eureka-client-2.0.5.jar:2.0.5]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:54:45.505+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2026-01-15T10:54:48.507+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2026-01-15T10:54:48.522+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080": Connect to http://localhost:8761 failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080": Connect to http://localhost:8761 failed: Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:926)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:906)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:841)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:702)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:100)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:203)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:196)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1499)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1492)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1222)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1183)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:155)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1129)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 failed: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:215)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:497)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:151)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:112)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:88)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:117)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$2(RestTemplateTransportClientFactory.java:145)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:81)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:900)
+	... 40 more
+
+2026-01-15T10:54:48.523+01:00  WARN 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080": Connect to http://localhost:8761 failed: Connection refused
+2026-01-15T10:54:48.523+01:00 ERROR 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - de-registration failedCannot execute request on any known server
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:76) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:919) ~[eureka-client-2.0.5.jar:2.0.5]
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:900) ~[eureka-client-2.0.5.jar:2.0.5]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:203) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:196) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:387) ~[spring-cloud-context-4.3.1.jar:4.3.1]
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:134) ~[spring-cloud-context-4.3.1.jar:4.3.1]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:798) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:748) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1499) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:707) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1492) ~[spring-beans-6.2.15.jar:6.2.15]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1222) ~[spring-context-6.2.15.jar:6.2.15]
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1183) ~[spring-context-6.2.15.jar:6.2.15]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.doClose(ReactiveWebServerApplicationContext.java:155) ~[spring-boot-3.5.9.jar:3.5.9]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1129) ~[spring-context-6.2.15.jar:6.2.15]
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147) ~[spring-boot-3.5.9.jar:3.5.9]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116) ~[spring-boot-3.5.9.jar:3.5.9]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T10:54:48.525+01:00  INFO 79839 --- [api-gateway-willbank] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2026-01-15T10:59:20.633+01:00  INFO 83066 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Starting ApiGatewayApplication using Java 17.0.17 with PID 83066 (/home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank/target/classes started by steve in /home/steve/NetBeansProjects/WillBank-Microservices/apiGateWayWillBank)
+2026-01-15T10:59:20.637+01:00  INFO 83066 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : No active profile set, falling back to 1 default profile: "default"
+2026-01-15T10:59:22.033+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f5dc9c37-e30e-3cd4-a210-087a987ad6c0
+2026-01-15T10:59:23.633+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:59:24.078+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2026-01-15T10:59:24.079+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2026-01-15T10:59:24.079+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2026-01-15T10:59:24.079+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2026-01-15T10:59:24.079+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2026-01-15T10:59:24.079+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2026-01-15T10:59:24.080+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2026-01-15T10:59:24.080+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2026-01-15T10:59:24.080+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2026-01-15T10:59:24.080+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2026-01-15T10:59:24.080+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2026-01-15T10:59:24.081+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-01-15T10:59:24.081+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2026-01-15T10:59:24.081+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-01-15T10:59:25.351+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:59:25.399+01:00  INFO 83066 --- [api-gateway-willbank] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2026-01-15T10:59:26.417+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-01-15T10:59:26.478+01:00  WARN 83066 --- [api-gateway-willbank] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-01-15T10:59:26.552+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-01-15T10:59:26.608+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-01-15T10:59:26.618+01:00  INFO 83066 --- [api-gateway-willbank] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T10:59:26.645+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-01-15T10:59:26.647+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-01-15T10:59:26.647+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-01-15T10:59:26.648+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-01-15T10:59:26.648+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-01-15T10:59:26.649+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-01-15T10:59:26.653+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-01-15T10:59:27.137+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-01-15T10:59:27.139+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-01-15T10:59:27.141+01:00  INFO 83066 --- [api-gateway-willbank] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-01-15T10:59:27.145+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1768471167144 with initial instances count: 2
+2026-01-15T10:59:27.149+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY-WILLBANK with eureka with status UP
+2026-01-15T10:59:27.150+01:00  INFO 83066 --- [api-gateway-willbank] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1768471167150, current=UP, previous=STARTING]
+2026-01-15T10:59:27.153+01:00  INFO 83066 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080: registering service...
+2026-01-15T10:59:27.221+01:00  INFO 83066 --- [api-gateway-willbank] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY-WILLBANK/localhost:api-gateway-willbank:8080 - registration status: 204
+2026-01-15T10:59:27.349+01:00  INFO 83066 --- [api-gateway-willbank] [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080 (http)
+2026-01-15T10:59:27.356+01:00  INFO 83066 --- [api-gateway-willbank] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2026-01-15T10:59:27.845+01:00  INFO 83066 --- [api-gateway-willbank] [main] c.s.a.ApiGatewayApplication              : Started ApiGatewayApplication in 8.912 seconds (process running for 9.46)
+2026-01-15T10:59:56.344+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers/
+2026-01-15T11:00:46.329+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
+2026-01-15T11:01:17.441+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T11:01:56.420+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/search
+2026-01-15T11:02:36.726+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T11:03:30.904+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
+2026-01-15T11:04:26.656+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:05:09.045+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
+2026-01-15T11:05:29.173+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-5] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts
+2026-01-15T11:08:51.300+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/deposit
+2026-01-15T11:09:09.678+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-7] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/transactions/deposit
+2026-01-15T11:09:26.658+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:14:26.659+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:19:26.660+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:24:26.662+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:29:26.663+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:32:54.719+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request POST http://localhost:8080/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c
+2026-01-15T11:32:54.750+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-11]  500 Server Error for HTTP POST "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8082
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP POST "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:33:00.881+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c
+2026-01-15T11:33:00.884+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-12]  500 Server Error for HTTP GET "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8082
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:33:39.101+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c
+2026-01-15T11:33:39.104+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-13]  500 Server Error for HTTP GET "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8082
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:33:50.681+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c/
+2026-01-15T11:33:50.684+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-14]  500 Server Error for HTTP GET "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c/"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8082
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts/0f0836e1-a7e1-4a22-93c6-884a8fbe290c/" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:34:26.664+01:00  INFO 83066 --- [api-gateway-willbank] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-01-15T11:34:48.773+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/accounts
+2026-01-15T11:34:48.776+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-15]  500 Server Error for HTTP GET "/api/accounts"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8082
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/accounts" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:35:00.878+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
+2026-01-15T11:35:00.883+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-16]  500 Server Error for HTTP GET "/api/customers"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8081
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/customers" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:35:20.274+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/transactions/search
+2026-01-15T11:35:20.276+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5014009b-17]  500 Server Error for HTTP GET "/api/transactions/search"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8083
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/transactions/search" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2026-01-15T11:38:13.898+01:00  INFO 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] c.s.a.filter.LoggingFilter               : Request GET http://localhost:8080/api/customers
+2026-01-15T11:38:13.902+01:00 ERROR 83066 --- [api-gateway-willbank] [reactor-http-epoll-3] a.w.r.e.AbstractErrorWebExceptionHandler : [de846062-18]  500 Server Error for HTTP GET "/api/customers"
+
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: null: /192.168.116.17:8081
+	Suppressed: The stacktrace has been enhanced by Reactor, refer to additional information below: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/customers" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+Caused by: java.net.NoRouteToHostException
+	at io.netty.channel.unix.Errors.newConnectException0(Errors.java:158) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Errors.handleConnectErrno(Errors.java:131) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.unix.Socket.connect(Socket.java:351) ~[netty-transport-native-unix-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect0(AbstractEpollChannel.java:778) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollSocketChannel.doConnect0(EpollSocketChannel.java:144) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel.doConnect(AbstractEpollChannel.java:763) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.AbstractEpollChannel$AbstractEpollUnsafe.connect(AbstractEpollChannel.java:602) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.connect(DefaultChannelPipeline.java:1289) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:655) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.connect(CombinedChannelDuplexHandler.java:495) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.connect(ChannelOutboundHandlerAdapter.java:51) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.connect(CombinedChannelDuplexHandler.java:296) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeConnect(AbstractChannelHandlerContext.java:657) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:634) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:618) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.connect(AbstractChannelHandlerContext.java:545) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:891) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:228) ~[netty-transport-4.1.130.Final.jar:4.1.130.Final]
+	at reactor.netty.transport.TransportConnector.lambda$doConnect$8(TransportConnector.java:240) ~[reactor-netty-core-1.2.13.jar:1.2.13]
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:405) ~[netty-transport-classes-epoll-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.130.Final.jar:4.1.130.Final]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+

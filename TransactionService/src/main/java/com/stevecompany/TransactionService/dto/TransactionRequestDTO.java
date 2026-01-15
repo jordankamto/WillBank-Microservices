@@ -12,6 +12,13 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 public class TransactionRequestDTO {
-    public UUID accountId;
-    public BigDecimal amount;
+    private UUID accountId;
+    private BigDecimal amount;
+
+    // Getters & Setters
+    public UUID getAccountId() { return accountId; }
+    public void setAccountId(UUID accountId) { this.accountId = accountId; }
+
+    public BigDecimal getAmount() { return amount; }
+    public void setAmount(BigDecimal amount) { this.amount = amount; }
 }
