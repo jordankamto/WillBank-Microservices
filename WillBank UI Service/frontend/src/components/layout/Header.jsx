@@ -1,5 +1,6 @@
 import { useAuth } from '../../hooks/useAuth';
 import { FiLogOut, FiUser } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const { user, logout } = useAuth();
@@ -17,13 +18,15 @@ export default function Header() {
             <p className="font-medium">{user?.firstName} {user?.lastName}</p>
             <p className="text-sm text-gray-500">{user?.role}</p>
           </div>
+          <Link to={{pathname : "/login"}}>
           <button
-            onClick={logout}
+            // onClick={logout}
             className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
             title="Déconnexion"
           >
             <FiLogOut size={20} />
           </button>
+          </Link>
         </div>
       </div>
     </header>
