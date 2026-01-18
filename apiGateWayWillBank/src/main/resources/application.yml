@@ -5,6 +5,31 @@ spring:
   application:
     name: api-gateway-willbank
 
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - http://localhost:3000
+              - http://localhost:8080
+              - http://account-service:8081
+              - http://transaction-service:8082
+              - http://notification-service:8083
+              - http://composite-service:8084
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            exposedHeaders:
+              - Authorization
+              - Content-Type
+            allowCredentials: true
+
 eureka:
   client:
     register-with-eureka: true
