@@ -75,12 +75,12 @@ export default function CustomersList() {
               const badge = getStatusBadge(customer.status);
               return (
                 <tr key={customer.id} className="table-row border-b">
-                  <td className="py-4">
+                  <td className="py-4 text-left">
                     {customer.firstName} {customer.lastName}
                   </td>
-                  <td className="py-4">{customer.email}</td>
-                  <td className="py-4">{customer.phone}</td>
-                  <td className="py-4">
+                  <td className="py-4 text-left">{customer.email}</td>
+                  <td className="py-4 text-left">{customer.phone}</td>
+                  <td className="py-4 text-left">
                     <span className={`px-3 py-1 rounded-full text-sm ${badge.bg} ${badge.text}`}>
                       {badge.label}
                     </span>
@@ -104,18 +104,28 @@ export default function CustomersList() {
                           <FiUserCheck />
                         </button>
                       )}
-                      
+
                       {customer.status === 'ACTIVE' && (
                         <button
-                          onClick={() => setConfirmModal({ 
-                            isOpen: true, 
-                            action: 'suspend', 
-                            customerId: customer.id 
+                          onClick={() => setConfirmModal({
+                            isOpen: true,
+                            action: 'suspend',
+                            customerId: customer.id
                           })}
                           className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           title="Suspendre"
                         >
                           <FiUserX />
+                        </button>
+                      )}
+
+                      {customer.status === 'SUSPENDED' && (
+                        <button
+                          onClick={() => handleActivate(customer.id)}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          title="Réactiver le client"
+                        >
+                          <FiUserCheck />
                         </button>
                       )}
                     </div>

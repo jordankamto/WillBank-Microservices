@@ -10,8 +10,10 @@ export const accountService = {
   create: (account) => api.post('/api/accounts', account),
   
   freeze: (id) => api.put(`/api/accounts/${id}/freeze`),
-  
+
+  activate: (id) => api.put(`/api/accounts/${id}/activate`),
+
   block: (id) => api.put(`/api/accounts/${id}/block`),
-  
+
   close: (id) => api.put(`/api/accounts/${id}/close`)
 };

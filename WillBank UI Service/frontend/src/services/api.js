@@ -13,7 +13,7 @@ const api = axios.create({
 // Intercepteur de requête
 api.interceptors.request.use(
   (config) => {
-    console.log(`🚀 API Call: ${config.method?.toUpperCase()} ${config.url}`);
+    console.log(`API Call: ${config.method?.toUpperCase()} ${config.url}`);
     return config;
   },
   (error) => {
