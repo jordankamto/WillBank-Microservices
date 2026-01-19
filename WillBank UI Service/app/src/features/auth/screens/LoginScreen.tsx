@@ -120,7 +120,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
           </View>
 
           <Text style={styles.footer}>
-            © 2026 WillBank • Équipe SI-5
+            © 2026 WillBank and Partners Limited
           </Text>
         </ScrollView>
       </LinearGradient>

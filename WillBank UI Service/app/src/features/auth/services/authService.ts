@@ -1,10 +1,8 @@
-import { DEMO_USERS } from '../../../config/constants';
-import API_CONFIG from '../../../config/api.config';
-import apiClient from '../../../core/api/apiClient';
+import { DEMO_USERS, WILLBANK_SECRET_TOKEN } from '../../../config/constants';
 
 /**
  * Service d'authentification pour l'application mobile
- * Authentification simplifiée contre DEMO_USERS
+ * Version simplifiée utilisant WILLBANK_SECRET_TOKEN fixe
  */
 
 class AuthService {
@@ -21,24 +19,23 @@ class AuthService {
       throw new Error('Identifiants invalides');
     }
 
-    // Simulation d'appel API pour récupérer le token
-    // En production, ceci serait un vrai appel API
-    const mockResponse = {
-      token: 'Bearer WILLBANK_SECRET_TOKEN',
-      refreshToken: 'mock_refresh_token',
+    // Retourne le token fixe avec les infos utilisateur
+    const response = {
+      token: WILLBANK_SECRET_TOKEN,
+      refreshToken: 'fixed_refresh_token', // Non utilisé mais conservé pour compatibilité
       user: {
         id: user.customerId,
         email: user.email,
         customerId: user.customerId,
-        role: 'CUSTOMER',
+        role: 'USER',
       },
     };
 
-    return mockResponse;
+    return response;
   }
 
   /**
-   * Déconnexion
+   * Déconnexion simulée
    */
   async logout() {
     // Simulation d'appel API de déconnexion

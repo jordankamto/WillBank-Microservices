@@ -86,16 +86,19 @@ export const DATETIME_FORMAT = 'dd/MM/yyyy HH:mm';
 export const CURRENCY = 'XAF';
 export const LOCALE = 'fr-FR';
 
+// Token fixe pour l'authentification (version early)
+export const WILLBANK_SECRET_TOKEN = 'WILLBANK_SECRET_TOKEN';
+
 // Demo users pour authentification simplifiée
 export const DEMO_USERS = [
   {
-    email: "client1@willbank.com",
+    email: "jordan.kamgaing@stevecompany.com",
     password: "password123",
-    customerId: "uuid-client-1"
+    customerId: "3ff9a137-64fd-4d87-a0eb-03bd0839d62a"
   },
   {
-    email: "client2@willbank.com",
-    password: "password456",
-    customerId: "uuid-client-2"
+    email: "jean.dupont@example.com",
+    password: "password123",
+    customerId: "5fb71c24-be25-4c72-a791-09c4f5e73a89"
   }
 ];

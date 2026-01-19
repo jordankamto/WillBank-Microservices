@@ -25,7 +25,6 @@ import { theme } from '../../../config/theme';
 interface Account {
   id: string;
   balance: number;
-  accountNumber: string;
   type: string;
 }
 

@@ -283,8 +283,8 @@ const TransferTab: React.FC<{ accounts: Account[] }> = ({ accounts }) => {
     try {
       setLoading(true);
       await transactionService.transfer({
-        fromAccountId: fromAccount.id,
-        toAccountId: toAccount.id,
+        sourceAccountId: fromAccount.id,
+        targetAccountId: toAccount.id,
         amount: numAmount,
         description: description || 'Virement',
       });

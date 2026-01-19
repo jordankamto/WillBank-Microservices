@@ -11,45 +11,33 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../../../core/auth/AuthContext';
 import { useNavigation } from '@react-navigation/native';
-import dashboardService from '../services/dashboardService';
+import { useDashboard } from '../hooks/useDashboard';
 import { Spinner } from '../../../shared/components/Spinner';
 import { Card } from '../../../shared/components/Card';
 import { Button } from '../../../shared/components/Button';
 import { formatCurrency, formatRelativeDate } from '../../../core/utils/formatters';
 import { ACCOUNT_TYPE_LABELS } from '../../../config/constants';
 import { theme } from '../../../config/theme';
-import { DashboardData } from '../../../types/api.types';
 
 export const DashboardScreen: React.FC = () => {
   const { user } = useAuth();
   const navigation = useNavigation<any>();
-  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const { dashboardData, loading, error, fetchDashboard } = useDashboard(user?.customerId || '');
   const [refreshing, setRefreshing] = useState(false);
-  const [error, setError] = useState('');
 
   useEffect(() => {
-    loadDashboardData();
-  }, []);
-
-  const loadDashboardData = async () => {
-    if (!user?.customerId) return;
-
-    try {
-      setLoading(true);
-      const data = await dashboardService.getDashboardData(user.customerId) as DashboardData;
-      setDashboardData(data);
-    } catch (err: any) {
-      setError(err.message || 'Erreur lors du chargement');
-    } finally {
-      setLoading(false);
-      setRefreshing(false);
+    if (user?.customerId) {
+      fetchDashboard();
     }
-  };
+  }, [user?.customerId]);
 
   const onRefresh = () => {
     setRefreshing(true);
-    loadDashboardData();
+    if (user?.customerId) {
+      fetchDashboard().finally(() => setRefreshing(false));
+    } else {
+      setRefreshing(false);
+    }
   };
 
   const quickActions = [
