@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiEye, FiLock, FiXCircle, FiPlusCircle } from 'react-icons/fi';
+import { FiEye, FiLock, FiUnlock, FiXCircle, FiCheckCircle, FiPlusCircle, FiCreditCard, FiTrendingUp } from 'react-icons/fi';
 import { accountService } from '../../services/accountService';
 import { customerService } from '../../services/customerService';
 import { formatCurrency, getStatusBadge } from '../../utils/formatters';
@@ -49,6 +49,9 @@ export default function AccountsList() {
       if (action === 'freeze') {
         await accountService.freeze(accountId);
         toast.success('Compte gelé avec succès');
+      } else if (action === 'activate') {
+        await accountService.activate(accountId);
+        toast.success('Compte dégelé avec succès');
       } else if (action === 'block') {
         await accountService.block(accountId);
         toast.success('Compte bloqué avec succès');
@@ -109,15 +112,25 @@ export default function AccountsList() {
 
               return (
                 <tr key={account.id} className="table-row border-b">
-                  <td className="py-4">
+                  <td className="py-4 text-left">
                     {customer ? `${customer.firstName} ${customer.lastName}` : 'Client inconnu'}
                   </td>
                   <td className="py-4">
-                    <span className={`px-3 py-1 rounded-full text-sm ${typeBadge.bg} ${typeBadge.text}`}>
-                      {typeBadge.label}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      {account.type === 'CURRENT' ? (
+                        <>
+                          <FiCreditCard className="text-blue-600" />
+                          <span className="text-sm font-medium text-blue-600">Courant</span>
+                        </>
+                      ) : (
+                        <>
+                          <FiTrendingUp className="text-green-600" />
+                          <span className="text-sm font-medium text-green-600">Épargne</span>
+                        </>
+                      )}
+                    </div>
                   </td>
-                  <td className="py-4 font-bold text-green-600">
+                  <td className="py-4 font-bold text-green-600 text-left">
                     {formatCurrency(account.balance)}
                   </td>
                   <td className="py-4">
@@ -138,10 +151,10 @@ export default function AccountsList() {
                       {account.status === 'ACTIVE' && (
                         <>
                           <button
-                            onClick={() => setConfirmModal({ 
-                              isOpen: true, 
-                              action: 'freeze', 
-                              accountId: account.id 
+                            onClick={() => setConfirmModal({
+                              isOpen: true,
+                              action: 'freeze',
+                              accountId: account.id
                             })}
                             className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
                             title="Geler"
@@ -149,10 +162,10 @@ export default function AccountsList() {
                             <FiLock />
                           </button>
                           <button
-                            onClick={() => setConfirmModal({ 
-                              isOpen: true, 
-                              action: 'block', 
-                              accountId: account.id 
+                            onClick={() => setConfirmModal({
+                              isOpen: true,
+                              action: 'block',
+                              accountId: account.id
                             })}
                             className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
                             title="Bloquer"
@@ -160,6 +173,34 @@ export default function AccountsList() {
                             <FiXCircle />
                           </button>
                         </>
+                      )}
+
+                      {account.status === 'FROZEN' && (
+                        <button
+                          onClick={() => setConfirmModal({
+                            isOpen: true,
+                            action: 'activate',
+                            accountId: account.id
+                          })}
+                          className="p-2 text-green-600 hover:bg-green-50 rounded-lg"
+                          title="Dégeler"
+                        >
+                          <FiUnlock />
+                        </button>
+                      )}
+
+                      {account.status === 'BLOCKED' && (
+                        <button
+                          onClick={() => setConfirmModal({
+                            isOpen: true,
+                            action: 'activate',
+                            accountId: account.id
+                          })}
+                          className="p-2 text-green-600 hover:bg-green-50 rounded-lg"
+                          title="Débloquer"
+                        >
+                          <FiCheckCircle />
+                        </button>
                       )}
                     </div>
                   </td>
@@ -228,9 +269,19 @@ export default function AccountsList() {
         isOpen={confirmModal.isOpen}
         onClose={() => setConfirmModal({ isOpen: false, action: null, accountId: null })}
         onConfirm={() => handleAction(confirmModal.action, confirmModal.accountId)}
-        title={`${confirmModal.action === 'freeze' ? 'Geler' : confirmModal.action === 'block' ? 'Bloquer' : 'Fermer'} le compte`}
-        message={`Êtes-vous sûr de vouloir ${confirmModal.action === 'freeze' ? 'geler' : confirmModal.action === 'block' ? 'bloquer' : 'fermer'} ce compte ?`}
-        type="warning"
+        title={`${
+          confirmModal.action === 'freeze' ? 'Geler' :
+          confirmModal.action === 'activate' ? 'Dégeler/Débloquer' :
+          confirmModal.action === 'block' ? 'Bloquer' :
+          'Fermer'
+        } le compte`}
+        message={`Êtes-vous sûr de vouloir ${
+          confirmModal.action === 'freeze' ? 'geler' :
+          confirmModal.action === 'activate' ? 'dégeler/débloquer' :
+          confirmModal.action === 'block' ? 'bloquer' :
+          'fermer'
+        } ce compte ?`}
+        type={confirmModal.action === 'activate' ? 'success' : 'warning'}
       />
     </div>
   );

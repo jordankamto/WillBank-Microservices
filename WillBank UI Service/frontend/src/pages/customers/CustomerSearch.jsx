@@ -114,7 +114,7 @@ export default function CustomerSearch() {
                   {results.map((customer) => {
                     const statusBadge = getStatusBadge(customer.status);
                     return (
-                      <tr key={customer.id} className="table-row border-b">
+                      <tr key={customer.id} className="table-row border-b text-left">
                         <td className="py-4">{customer.firstName} {customer.lastName}</td>
                         <td className="py-4">{customer.email}</td>
                         <td className="py-4">{customer.phone}</td>

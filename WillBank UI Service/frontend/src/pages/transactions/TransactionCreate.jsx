@@ -2,13 +2,16 @@ import { useState, useEffect } from 'react';
 import { customerService } from '../../services/customerService';
 import { accountService } from '../../services/accountService';
 import { transactionService } from '../../services/transactionService';
+import { formatCurrency } from '../../utils/formatters';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
 import toast from 'react-hot-toast';
 
 export default function TransactionCreate() {
   const [activeTab, setActiveTab] = useState('deposit'); // deposit, withdraw, transfer
   const [customers, setCustomers] = useState([]);
-  const [accounts, setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState([]); // Comptes pour la source
+  const [destinationAccounts, setDestinationAccounts] = useState([]); // Comptes pour la destination (virements)
+  const [allAccounts, setAllAccounts] = useState([]); // Tous les comptes actifs
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     customerId: '',
@@ -20,6 +23,20 @@ export default function TransactionCreate() {
   useEffect(() => {
     fetchCustomers();
   }, []);
+
+  useEffect(() => {
+    // Recharger les comptes quand on change d'onglet et qu'un client est sélectionné
+    if (formData.customerId) {
+      handleCustomerSelect(formData.customerId);
+    }
+  }, [activeTab]);
+
+  useEffect(() => {
+    // Mettre à jour les comptes destination quand le compte source change
+    if (activeTab === 'transfer' && formData.accountId && allAccounts.length > 0) {
+      updateDestinationAccounts(formData.accountId);
+    }
+  }, [formData.accountId, allAccounts, activeTab]);
 
   const fetchCustomers = async () => {
     try {
@@ -33,11 +50,58 @@ export default function TransactionCreate() {
   const handleCustomerSelect = async (customerId) => {
     setFormData({ ...formData, customerId, accountId: '', targetAccountId: '' });
     try {
-      const response = await accountService.getByCustomerId(customerId);
-      setAccounts(response.data.filter(a => a.status === 'ACTIVE'));
+      if (activeTab === 'transfer') {
+        // Pour les virements, récupérer tous les comptes actifs et leurs propriétaires
+        const [accountsRes, customersRes] = await Promise.all([
+          accountService.getAll(),
+          customerService.getAll()
+        ]);
+
+        const activeAccounts = accountsRes.data.filter(a => a.status === 'ACTIVE');
+        const customersMap = {};
+        customersRes.data.forEach(c => {
+          customersMap[c.id] = c;
+        });
+
+        // Comptes du client sélectionné (pour la source)
+        const customerAccounts = activeAccounts
+          .filter(a => a.customerId === customerId)
+          .map(account => ({
+            ...account,
+            owner: customersMap[account.customerId]
+          }));
+
+        // Tous les comptes avec propriétaires (pour les destinations)
+        const allAccountsWithOwners = activeAccounts.map(account => ({
+          ...account,
+          owner: customersMap[account.customerId]
+        }));
+
+        setAccounts(customerAccounts);
+        setAllAccounts(allAccountsWithOwners);
+      } else {
+        // Pour dépôts/retraits, récupérer seulement les comptes du client
+        const response = await accountService.getByCustomerId(customerId);
+        setAccounts(response.data.filter(a => a.status === 'ACTIVE'));
+      }
     } catch (error) {
       console.error('Erreur chargement comptes:', error);
     }
+  };
+
+  const updateDestinationAccounts = (sourceAccountId) => {
+    const sourceAccount = allAccounts.find(a => a.id === sourceAccountId);
+    if (!sourceAccount) return;
+
+    // Comptes destination : même type que la source OU types différents mais même client
+    const destinationAccounts = allAccounts.filter(account =>
+      account.id !== sourceAccountId && (
+        account.type === sourceAccount.type || // Même type (peu importe le propriétaire)
+        account.customerId === sourceAccount.customerId // Même client (peu importe le type)
+      )
+    );
+
+    setDestinationAccounts(destinationAccounts);
   };
 
   const handleSubmit = async (e) => {
@@ -63,7 +127,7 @@ export default function TransactionCreate() {
           targetAccountId: formData.targetAccountId,
           amount: parseFloat(formData.amount)
         });
-        toast.success('Virement effectué avec succès');
+        toast.loading('Virement initié', { duration: 2000 });
       }
 
       setFormData({ customerId: '', accountId: '', targetAccountId: '', amount: '' });
@@ -117,7 +181,7 @@ export default function TransactionCreate() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Sélection Client */}
           <div>
-            <label className="block text-sm font-medium mb-2">Client</label>
+            <label className="block text-sm font-medium mb-2 text-left">Client</label>
             <select
               value={formData.customerId}
               onChange={(e) => handleCustomerSelect(e.target.value)}
@@ -148,7 +212,10 @@ export default function TransactionCreate() {
                 <option value="">Sélectionner un compte</option>
                 {accounts.map(a => (
                   <option key={a.id} value={a.id}>
-                    {a.type} - Solde: {formatCurrency(a.balance)}
+                    {activeTab === 'transfer' && a.owner ?
+                      `${a.owner.firstName} ${a.owner.lastName} - ${a.type} - Solde: ${formatCurrency(a.balance)}` :
+                      `${a.type} - Solde: ${formatCurrency(a.balance)}`
+                    }
                   </option>
                 ))}
               </select>
@@ -166,9 +233,12 @@ export default function TransactionCreate() {
                 required
               >
                 <option value="">Sélectionner un compte</option>
-                {accounts.filter(a => a.id !== formData.accountId).map(a => (
+                {destinationAccounts.map(a => (
                   <option key={a.id} value={a.id}>
-                    {a.type} - Solde: {formatCurrency(a.balance)}
+                    {a.owner ?
+                      `${a.owner.firstName} ${a.owner.lastName} - ${a.type} - Solde: ${formatCurrency(a.balance)}` :
+                      `${a.type} - Solde: ${formatCurrency(a.balance)}`
+                    }
                   </option>
                 ))}
               </select>
@@ -177,7 +247,7 @@ export default function TransactionCreate() {
 
           {/* Montant */}
           <div>
-            <label className="block text-sm font-medium mb-2">Montant (XAF)</label>
+            <label className="block text-sm font-medium mb-2 text-left">Montant (XAF)</label>
             <input
               type="number"
               value={formData.amount}

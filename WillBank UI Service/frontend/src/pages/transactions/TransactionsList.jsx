@@ -18,7 +18,11 @@ export default function TransactionsList() {
     try {
       setLoading(true);
       const response = await dashboardService.searchTransactions(params);
-      setTransactions(response.data);
+      // Trier les transactions par date décroissante (plus récent en premier)
+      const sortedTransactions = response.data.sort((a, b) =>
+        new Date(b.createdAt) - new Date(a.createdAt)
+      );
+      setTransactions(sortedTransactions);
     } catch (error) {
       console.error('Erreur chargement transactions:', error);
     } finally {
@@ -135,7 +139,7 @@ export default function TransactionsList() {
             {transactions.map((tx) => {
               const statusBadge = getStatusBadge(tx.status);
               return (
-                <tr key={tx.transactionId} className="table-row border-b">
+                <tr key={tx.transactionId} className="table-row border-b text-left">
                   <td className="py-3">{formatDate(tx.createdAt)}</td>
                   <td className="py-3 font-mono text-sm">{tx.transactionId.substring(0, 8)}...</td>
                   <td className="py-3">{tx.type}</td>

@@ -84,6 +84,17 @@ public class AccountController {
         ));
     }
 
+    @PutMapping("/{id}/activate")
+    public ResponseEntity<Map<String, Object>> activate(@PathVariable UUID id) {
+        log.info("Received PUT /api/accounts/{}/activate", id);
+        service.activate(id);
+        return ResponseEntity.ok(Map.of(
+                "message", "Account activated successfully",
+                "accountId", id,
+                "status", "ACTIVE"
+        ));
+    }
+
     @PutMapping("/{id}/block")
     public ResponseEntity<Map<String, Object>> block(@PathVariable UUID id) {
         log.info("Received PUT /api/accounts/{}/block", id);

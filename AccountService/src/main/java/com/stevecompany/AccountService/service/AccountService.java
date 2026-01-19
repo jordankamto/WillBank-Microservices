@@ -99,7 +99,7 @@ public class AccountService {
         log.info("Freezing account {}", id);
         acc.setStatus(Account.Status.FROZEN);
         Account saved = repository.save(acc);
-        
+
         // Publier événement AccountUpdated
         eventPublisher.publishAccountUpdated(
                 new AccountUpdatedEvent(
@@ -107,6 +107,23 @@ public class AccountService {
                         saved.getStatus().name(),
                         saved.getBalance(),
                         "FREEZE"
+                )
+        );
+    }
+
+    public void activate(UUID id) {
+        Account acc = get(id);
+        log.info("Activating account {}", id);
+        acc.setStatus(Account.Status.ACTIVE);
+        Account saved = repository.save(acc);
+
+        // Publier événement AccountUpdated
+        eventPublisher.publishAccountUpdated(
+                new AccountUpdatedEvent(
+                        saved.getId(),
+                        saved.getStatus().name(),
+                        saved.getBalance(),
+                        "ACTIVATE"
                 )
         );
     }

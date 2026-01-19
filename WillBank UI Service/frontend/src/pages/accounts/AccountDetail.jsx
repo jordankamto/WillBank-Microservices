@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FiArrowLeft, FiDownload } from 'react-icons/fi';
+import { FiArrowLeft, FiDownload, FiCreditCard, FiTrendingUp } from 'react-icons/fi';
 import { accountService } from '../../services/accountService';
 import { transactionService } from '../../services/transactionService';
 import { customerService } from '../../services/customerService';
 import { formatCurrency, formatDate, getStatusBadge } from '../../utils/formatters';
 import LoadingSpinner from '../../components/common/LoadingSpinner';
+import toast from 'react-hot-toast';
 
 export default function AccountDetail() {
   const { id } = useParams();
@@ -37,6 +38,49 @@ export default function AccountDetail() {
     }
   };
 
+  const downloadStatement = async () => {
+    try {
+      // Récupérer toutes les transactions (sans pagination)
+      const allTransactionsRes = await transactionService.getByAccount(id, 0, 1000); // Récupérer plus de transactions
+      const allTransactions = allTransactionsRes.data || [];
+
+      // Créer le contenu CSV
+      const csvHeaders = ['Date', 'Type', 'Montant', 'Statut', 'Description'];
+      const csvRows = allTransactions.map(tx => [
+        formatDate(tx.createdAt),
+        tx.type,
+        tx.amount.toString(),
+        tx.status,
+        tx.description || ''
+      ]);
+
+      // Combiner headers et données
+      const csvContent = [csvHeaders, ...csvRows]
+        .map(row => row.map(field => `"${field}"`).join(','))
+        .join('\n');
+
+      // Créer et télécharger le fichier
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+
+      if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', `releve-compte-${account.accountNumber || account.id}-${new Date().toISOString().split('T')[0]}.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
+
+      toast.success('Relevé téléchargé avec succès');
+    } catch (error) {
+      console.error('Erreur téléchargement relevé:', error);
+      toast.error('Erreur lors du téléchargement du relevé');
+    }
+  };
+
   if (loading) return <LoadingSpinner />;
   if (!account) return <div>Compte non trouvé</div>;
 
@@ -62,9 +106,19 @@ export default function AccountDetail() {
             </div>
             <div>
               <p className="text-sm text-gray-500">Type</p>
-              <span className={`px-3 py-1 rounded-full text-sm ${typeBadge.bg} ${typeBadge.text}`}>
-                {typeBadge.label}
-              </span>
+              <div className="flex items-center justify-center gap-2 mt-1">
+                {account.type === 'CURRENT' ? (
+                  <>
+                    <FiCreditCard className="text-blue-600" size={20} />
+                    <span className="text-sm font-medium text-blue-600">Compte Courant</span>
+                  </>
+                ) : (
+                  <>
+                    <FiTrendingUp className="text-green-600" size={20} />
+                    <span className="text-sm font-medium text-green-600">Compte Épargne</span>
+                  </>
+                )}
+              </div>
             </div>
             <div>
               <p className="text-sm text-gray-500">Solde</p>
@@ -109,12 +163,12 @@ export default function AccountDetail() {
       <div className="card">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-bold">Historique des Transactions</h3>
-          <Link
-            to={`/accounts/${id}/statement`}
+          <button
+            onClick={downloadStatement}
             className="btn-secondary flex items-center gap-2"
           >
             <FiDownload /> Télécharger Relevé
-          </Link>
+          </button>
         </div>
         
         <div className="overflow-x-auto">
@@ -131,7 +185,7 @@ export default function AccountDetail() {
               {transactions.map((tx) => {
                 const txStatusBadge = getStatusBadge(tx.status);
                 return (
-                  <tr key={tx.transactionId} className="table-row border-b">
+                  <tr key={tx.transactionId} className="table-row border-b text-left">
                     <td className="py-3">{formatDate(tx.createdAt)}</td>
                     <td className="py-3">{tx.type}</td>
                     <td className="py-3 font-bold">{formatCurrency(tx.amount)}</td>

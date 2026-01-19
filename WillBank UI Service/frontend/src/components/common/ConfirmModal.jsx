@@ -4,7 +4,8 @@ export default function ConfirmModal({ isOpen, onClose, onConfirm, title, messag
   const colors = {
     danger: 'bg-red-600 hover:bg-red-700',
     warning: 'bg-yellow-600 hover:bg-yellow-700',
-    primary: 'bg-primary-600 hover:bg-primary-700'
+    primary: 'bg-primary-600 hover:bg-primary-700',
+    success: 'bg-green-600 hover:bg-green-700'
   };
   
   return (

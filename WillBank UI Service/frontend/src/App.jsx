@@ -8,6 +8,7 @@ import CustomerSearch from './pages/customers/CustomerSearch';
 import CustomerDashboard from './pages/customers/CustomerDashboard';
 import CustomerCreate from './pages/customers/CustomerCreate';
 import AccountsList from './pages/accounts/AccountsList';
+import AccountDetail from './pages/accounts/AccountDetail';
 import TransactionsList from './pages/transactions/TransactionsList';
 import TransactionCreate from './pages/transactions/TransactionCreate';
 import Login from './pages/auth/Login';
@@ -30,6 +31,7 @@ function App() {
         <Route path="customers/new" element={<CustomerCreate />} />
         <Route path="customers/:id/dashboard" element={<CustomerDashboard />} />
         <Route path="accounts" element={<AccountsList />} />
+        <Route path="accounts/:id" element={<AccountDetail />} />
         <Route path="transactions" element={<TransactionsList />} />
         <Route path="transactions/new" element={<TransactionCreate />} />
       </Route>
